@@ -1,0 +1,145 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage[landscape]{geometry}
+\geometry{left = 10mm}
+\usepackage{caption}
+\usepackage{bm}
+\usepackage{amsmath}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+
+\begin{document}
+
+\begin{table}[!htbp] 
+  \caption{Modelling method components. X denotes permanent features, o denotes features dependent on dataset size.} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} ccccccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+& Source 
+& R package 
+& \multicolumn{1}{p{2cm}}{\centering Hierarchical \\ regression \\ coefficients} 
+& \multicolumn{1}{p{2cm}}{\centering Dirichlet \\ process} 
+& \multicolumn{1}{p{2cm}}{\centering Latent \\ factors} 
+& Multivariate 
+& Probit 
+& Logistic 
+& Regression 
+& \multicolumn{1}{p{2cm}}{\centering Spatially-\\explicit} \\ 
+\hline \\[-1.8ex] 
+MPR & Golding et al (2015) & BayesComm &   &   &   & X & X &   & X &   \\ 
+MLR & Ovaskainen et al (2010) & NA &   &   &   & X &   & X & X &   \\ 
+HPR & Pollock et al (2014) & NA & X &   &   & X & X &   & X &   \\ 
+LPR & Hui (2016) & boral &   &   & X & X & X &   & X &   \\ 
+DPR & Clark et al (2017) & gjam &   & o  & o  & X & X &   & X &   \\ 
+HLR-S & Ovaskainen et al (2016) & NA & X &   & X & X & X &   & X & X \\ 
+HLR-NS & Ovaskainen et al (2016) & NA & X &   & X & X & X &   & X &   \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+
+\begin{table}[!htbp] 
+  \caption{Symbology.} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cl} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Symbol & Definition \\ 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+\multicolumn{2}{ c}{Subscripts} \\
+\hline \\[-1.8ex]
+$i$ & Site. $i = 1, ..., n$ \\
+$j$ & Species. $j = 1, ..., J$ \\
+$k$ & Measured covariate. $k = 1, ..., K$ \\
+$h$ & Latent factor / Unmeasured covariate. $h = 1, ..., H$ \\
+$l$ & Species archetype. $l = 1, ..., L$ \\
+\hline \\[-1.8ex]
+\multicolumn{2}{ c}{Main Terms} \\ 
+\hline \\[-1.8ex]
+$y$ & Binary response variable \\
+$1(.)$ & Indicator function \\
+$z$ & Normally-distributed latent variable \\
+$\mu$ & Linear predictor for measured covariates \\
+$\nu$ & Linear predictor for unmeasured covariates \\
+$\textbf{X}$ & Design matrix of measured covariates ($I.K$) \\
+$\hm\beta$ & Matrix of regression coefficients ($K.J$) \\
+$\hm\eta$ & Matrix of latent factors ($n.H$) \\
+$\hm\lambda$ & Matrix of factor loadings ($H.J$) \\
+$\textbf{I}$ & Identity matrix ($J.J$) \\
+$\textbf{A}$ & Archetype-reduced matrix of factor loadings ($H.L$) \\
+$\textbf{R}$ & Symmetric, positive-definite correlation matrix ($J.J$) \\
+$e$ & Correlated residual error \\
+$\varepsilon$ & Uncorrelated residual error \\
+$\phi$ & Cumulative density function of $N(0,1)$ \\
+$\omega$ & Mean of the normal distribution for hierarchical $\hm\beta$ coefficients \\
+$\sigma$ & Standard deviation of the normal distribution for hierarchical $\hm\beta$ coefficients \\
+$d$ & Spatial distance \\
+$\alpha$ & Spatial scale of latent factors \\
+\hline \\[-1.8ex]
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+
+\begin{table}[!htbp] 
+  \caption{Dataset summary} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & Source & Geographic location & Species & Sites & Covariates \\ 
+\hline \\[-1.8ex] 
+Birds & Harris (2015) & North America & $370$ & $2,752$ & $8$ \\ 
+Butterflies & Ovaskainen et al (2016) & Great Britain & $55$ & $2,609$ & $4$ \\ 
+Eucalypts & Pollock et al (2014) & Grampians National Park, Australia & $12$ & $458$ & $7$ \\ 
+Frogs & Pollock et al (2014) & Melbourne, Australia & $9$ & $104$ & $3$ \\ 
+Fungi & Ovaskainen et al (2010) & Southern Finland & $11$ & $800$ & $15$ \\ 
+Mosquitos & Golding et al (2015) & South-East England & $16$ & $167$ & $13$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+
+\begin{table}[!htbp] 
+  \caption{Model compatibility with datasets. Pairs marked with X were compatible.} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & MPR & MLR & HPR & LPR & DPR & HLR-S & HLR-NS \\ 
+\hline \\[-1.8ex] 
+Birds & X &   &   & X & X &   & X \\ 
+Butterflies & X &   &   & X & X &   & X \\ 
+Eucalypts & X & X & X & X & X & X & X \\ 
+Frogs & X & X & X & X & X & X & X \\ 
+Fungi & X &   & X & X & X &   & X \\ 
+Mosquitos & X &   & X & X & X & X & X \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+
+\begin{table}[!htbp]
+  \caption{Model runtimes (in hours)} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}} cccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & MPR & MLR & HPR & LPR & DPR & HLR-S & HLR-NS \\ 
+\hline \\[-1.8ex] 
+Birds & 3.8 & \textgreater 168 & NA & $120.410$ & $27.260$ & \textgreater 168 & $15.210$ \\ 
+Butterflies & 0.23 & \textgreater 168 & \textgreater 168 & $13.860$ & $6.480$ & \textgreater 168 & $2.100$ \\ 
+Eucalypts & \textless 0.02 & 142.12 & 7.58 & $0.330$ & $0.250$ & 50.02 & $0.210$ \\ 
+Frogs & \textless 0.02 & 14.05 & 0.94 & $0.040$ & $0.060$ & 1.35 & $0.130$ \\ 
+Fungi & \textless 0.02 & \textgreater 168 & 15.79 & $0.620$ & $0.670$ & NA & $0.260$ \\ 
+Mosquitos & \textless 0.02 & \textgreater 168 & 6.42 & $0.140$ & $0.730$ & 1.98 & $0.200$ \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table}
+
+
+
+\end{document}
