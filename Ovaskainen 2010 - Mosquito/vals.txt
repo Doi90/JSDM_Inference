@@ -1,0 +1,1 @@
+{depth__cm},{temperature__C},{oxidation_reduction_potential__Mv},{salinity__ppt},{water_crowfoot__Ranunculus},{rushes__Juncus_or_Scirpus},{filamentous_algae},{emergent_grass},{ivy_leafed_duckweed__Lemna_trisulca},{bulrushes__Typha},{reeds_Phragmites},{marestail__Hippuris},{common_duckweed__Lemna_minor}
