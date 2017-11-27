@@ -1,0 +1,48 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+**/*.Rproj
+**/*_Compiled.csv
+**/*_Cov.csv
+**/*_LatLon.csv
+**/*_PA.csv
+**/*_sd.csv
+**/*.RDataTmp
+**/*_validation.csv
+**/*_Covar.csv
+**/*_Covar2.csv
+**/*_data.csv
+**/*Cov.txt
+**/*PA.txt
+**/*bird-scale.csv
+**/species.txt
+**/*Compiled.txt
+**/*.Rdata
+**/*Complete.csv
+Pollock*/Occur.csv
+Pollock*/Beta.csv
+Pollock*/Mu.csv
+Pollock*/EnvRho.csv
+Pollock*/Rho.csv
+Pollock*/X.csv
+Pollock Test*/
+BayesComm\ -\ Mosquito/*.pdf
+Boab\ Model\ Runs/
+boral\ -\ Mosquito\ -\ Copy/
+boral\ -\ Mosquito\ -\ NP/*.png
+Clark\ -\ Bird\ -\ Copy/
+Clark\ -\ Bird\ -\ No\ Dirichlet/
+Clark\ -\ Butterfly\ -\ Copy/
+Cross\ Validation/
+Harris**/
+NeCTAR**
+Ovaskainen\ 2010*/Occur.csv
+Ovaskainen\ 2010*/X.csv
+Ovaskainen\ 2010*/*-PA.csv
+Ovaskainen\ 2010*/*_Covar.txt
+Ovaskainen\ 2010*/res*
+Ovaskainen\ 2010*/*-Cov.csv
+Ovaskainen\ 2010*/*Copy.csv
+Ovaskainen\ 2016*/*.docx
+Ovaskainen\ 2016*/examples/*/data/*
