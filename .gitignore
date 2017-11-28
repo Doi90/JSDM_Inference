@@ -20,22 +20,19 @@
 **/*Compiled.txt
 **/*.Rdata
 **/*Complete.csv
-Pollock*/Occur.csv
-Pollock*/Beta.csv
-Pollock*/Mu.csv
-Pollock*/EnvRho.csv
-Pollock*/Rho.csv
-Pollock*/X.csv
-Pollock Test*/
+*.tif
+*.png
 BayesComm\ -\ Mosquito/*.pdf
 Boab\ Model\ Runs/
 boral\ -\ Mosquito\ -\ Copy/
 boral\ -\ Mosquito\ -\ NP/*.png
+boral\ factor\ level\ test/
 Clark\ -\ Bird\ -\ Copy/
 Clark\ -\ Bird\ -\ No\ Dirichlet/
 Clark\ -\ Butterfly\ -\ Copy/
 Cross\ Validation/
 Harris**/
+jsdm_matlab.pem
 NeCTAR**
 Ovaskainen\ 2010*/Occur.csv
 Ovaskainen\ 2010*/X.csv
@@ -46,3 +43,70 @@ Ovaskainen\ 2010*/*-Cov.csv
 Ovaskainen\ 2010*/*Copy.csv
 Ovaskainen\ 2016*/*.docx
 Ovaskainen\ 2016*/examples/*/data/*
+Ovaskainen*/**/posteriors/1*
+Ovaskainen*/**/posteriors/2*
+Ovaskainen*/**/posteriors/3*
+Ovaskainen*/**/posteriors/4*
+Ovaskainen*/**/posteriors/5*
+Ovaskainen*/**/posteriors/eta*
+Ovaskainen*/**/posteriors/lambda*
+Ovaskainen*/**/posteriors/gamma*
+Ovaskainen*/**/posteriors/alpha*
+Ovaskainen*/**/posteriors/sigma*
+Ovaskainen*/**/posteriors/eta*
+Ovaskainen*/**/posteriors/V*
+Ovaskainen*/**/posteriors/beta_B*
+Ovaskainen*/**/posteriors/beta_E*
+Ovaskainen*/**/posteriors/beta_F*
+Ovaskainen*/**/posteriors/beta_M*
+Ovaskainen*/**/predictions/
+Ovaskainen\ 2016\ -\ Frog2/
+Ovaskainen\ 2016\ -\ Bird/**/results/beta_Bird.csv
+Ovaskainen\ 2016\ -\ Butterfly/**/results/beta_Butterfly.csv
+Ovaskainen\ 2016\ -\ Eucalypt/**/results/beta_Eucalypt.csv
+Ovaskainen\ 2016\ -\ Frog/**/results/beta_Frog.csv
+Ovaskainen\ 2016\ -\ Fungi/**/results/beta_Fungi.csv
+Ovaskainen\ 2016\ -\ Mosquito/**/results/beta_Mosquito.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Birds/**/results/beta_Bird.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Butterfly/**/results/beta_Butterfly.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Eucalypt/**/results/beta_Eucalypt.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Frog/**/results/beta_Frog.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Fungi/**/results/beta_Fungi.csv
+Ovaskainen\ 2016\ -\ Non-spatial\ -\ Mosquito/**/results/beta_Mosquito.csv
+Ovaskainen ESS/
+Pollock*/Occur.csv
+Pollock*/Beta.csv
+Pollock*/Mu.csv
+Pollock*/EnvRho.csv
+Pollock*/Rho.csv
+Pollock*/X.csv
+Pollock Test*/
+Runtimes.txt
+Sampler\ Efficiency\ Comparison/*Butterfly/
+Sampler\ Efficiency\ Comparison/**/eta*
+Sampler\ Efficiency\ Comparison/Pollock*/Occur.csv
+Sampler\ Efficiency\ Comparison/Pollock*/Beta.csv
+Sampler\ Efficiency\ Comparison/Pollock*/Mu.csv
+Sampler\ Efficiency\ Comparison/Pollock*/EnvRho.csv
+Sampler\ Efficiency\ Comparison/Pollock*/Rho.csv
+Sampler\ Efficiency\ Comparison/Pollock*/X.csv
+Sampler\ Efficiency\ Comparison/Ovaskainen\ 2016\ -\ Mosquito/**/results/beta_Mosquito.csv
+Sampler\ Efficiency\ Comparison/Ovaskainen\ 2016\ -\ Non-spatial\ -\ Mosquito/**/results/beta_Mosquito.csv
+Sampler\ Efficiency\ Comparison/Ovaskainen\ 2016*/examples/*/data/*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/1*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/2*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/3*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/4*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/5*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/eta*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/lambda*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/gamma*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/alpha*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/sigma*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/eta*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/V*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_B*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_E*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_F*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_M*
+Sampler\ Efficiency\ Comparison/Ovaskainen*/**/predictions/
