@@ -1,0 +1,16 @@
+Mosq.
+
+BC: 28.21 seconds
+Pol: 8.67539 mins
+Ov: 830.157178 seconds
+OvNS: 135.884902 seconds
+Bor: 116.86s
+Cla: 474.48s
+
+Butterf
+BC: 1074.91 seconds
+Pol: NA
+Ov: NA
+OvNS: 1262.691791 seconds
+Bor: 19369.23s 
+Cla: 
