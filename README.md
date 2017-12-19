@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/112129318.svg)](https://zenodo.org/badge/latestdoi/112129318)
+
 # JSDM_Inference
 
 The R/MATLAB/Mathematica script files, extracted value .csvs, and generated figures for the [INSERT HERE] paper on JSDMs.
