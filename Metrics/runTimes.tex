@@ -12,7 +12,7 @@
 \begin{document}
 
 \begin{table}[!htbp] 
-  \caption{Modelling method components. X denotes permanent features, o denotes features dependent on dataset size.} 
+  \caption{Modelling method components. X denotes permanent features, o denotes features dependent on dataset size. Models without an R package have code scripts available in the supplementary material.} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}} ccccccccccc} 
 \\[-1.8ex]\hline 
@@ -41,7 +41,7 @@ HLR-NS & Ovaskainen et al (2016) & NA & X &   & X & X & X &   & X &   \\
 
 
 \begin{table}[!htbp] 
-  \caption{Symbology.} 
+  \caption{Symbology. Matrix dimensions supplied in brackets.} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}} cl} 
 \\[-1.8ex]\hline 
@@ -64,13 +64,13 @@ $1(.)$ & Indicator function \\
 $z$ & Normally-distributed latent variable \\
 $\mu$ & Linear predictor for measured covariates \\
 $\nu$ & Linear predictor for unmeasured covariates \\
-$\textbf{X}$ & Design matrix of measured covariates ($I.K$) \\
-$\hm\beta$ & Matrix of regression coefficients ($K.J$) \\
-$\hm\eta$ & Matrix of latent factors ($n.H$) \\
-$\hm\lambda$ & Matrix of factor loadings ($H.J$) \\
-$\textbf{I}$ & Identity matrix ($J.J$) \\
-$\textbf{A}$ & Archetype-reduced matrix of factor loadings ($H.L$) \\
-$\textbf{R}$ & Symmetric, positive-definite correlation matrix ($J.J$) \\
+$\textbf{X}$ & Design matrix of measured covariates ($n\cdot{K}$) \\
+$\hm\beta$ & Matrix of regression coefficients ($K\cdot{J}$) \\
+$\hm\eta$ & Matrix of latent factors ($n\cdot{H}$) \\
+$\hm\lambda$ & Matrix of factor loadings ($H\cdot{J}$) \\
+$\textbf{I}$ & Identity matrix ($J\cdot{J}$) \\
+$\textbf{A}$ & Archetype-reduced matrix of factor loadings ($H\cdot{L}$) \\
+$\textbf{R}$ & Symmetric, positive-definite correlation matrix ($J\cdot{J}$) \\
 $e$ & Correlated residual error \\
 $\varepsilon$ & Uncorrelated residual error \\
 $\phi$ & Cumulative density function of $N(0,1)$ \\
