@@ -1,0 +1,125 @@
+---
+title: "Code Repository Vignette"
+author: "David Wilkinson"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    css: lodestar.css
+    toc: yes
+    toc_float:
+      collapsed: no
+      toc_depth: 4
+---
+
+## Formatting your data
+
+As we do not own the data used in our analysis we have not provided it online as part of the repository. Here we provide instructions for how to replicate our analysis methodology on your own data.
+
+You will require presence/absence data for your species and measured environmental variables at all sites. Different models require data to be provided in different formats.
+
+### MLR
+
+Data must be supplied as follows:
+
++  Separate `.txt` files for species and environmental data where rows correspond to sites. **Do not include column names**. Include an intercept column at the front of the environmental data.
+
+### MPR
+
+Data can be supplied as either of the following with some minor code alterations:
+
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
++  As separate `.csv` files for species and environmental data
+
+### HPR
+
+Data can be supplied as either of the following with some minor code alterations:
+
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
++  As separate `.csv` files for species and environmental data
+
+### LPR
+
+Data can be supplied as either of the following with some minor code alterations:
+
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
++  As separate `.csv` files for species and environmental data
+
+### DPR
+
+Data can be supplied as either of the following with some minor code alterations:
+
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
++  As separate `.csv` files for species and environmental data
+
+### HLR-NS
+
+Data must be supplied in a very specific format for this model. For more detailed information refer to the supplementary material of Ovaskainen *et al* (2016a). Replace all instances of `<dataset>` with the name of your dataset.
+
++  `y_<dataset>.csv`: Your presence-absence data **with no column names**. Sites as rows, species as columns.
++  `X_<dataset>.csv`: Your covariate data **with no column names**. Sites as rows, variables as columns. The first column must be all `1`s for the intercept, the remaining columns are your measured variables.
++  `LF_xy_<dataset>_1.csv`: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)
++  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites)
++  `LF_alpha_<dataset>_1.csv`: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from `0` to `1` by `0.01`, and the second column is all `0.005` except for the first row which is `0.5`.
++  `dist_<dataset>.csv`: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be `2` for the probit model.
++  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line
++  `covariates_<dataset>.txt`: A text file of variable names (same order as `X_<dataset>.csv`). Each covariate on its own line. Don't forget the intercept column!
+
+### HLR-S
+
+Data must be supplied in a very specific format for this model. For more detailed information refer to the supplementary material of Ovaskainen *et al* (2016a). Replace all instances of `<dataset>` with the name of your dataset.
+
++  `y_<dataset>.csv`: Your presence-absence data **with no column names**. Sites as rows, species as columns.
++  `X_<dataset>.csv`: Your covariate data **with no column names**. Sites as rows, variables as columns. The first column must be all `1`s for the intercept, the remaining columns are your measured variables.
++  `LF_xy_<dataset>_1.csv`: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)
++  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites)
++  `LF_alpha_<dataset>_1.csv`: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from `0` to `1` by `0.01`, and the second column is all `0.005` except for the first row which is `0.5`.
++  `dist_<dataset>.csv`: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be `2` for the probit model.
++  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line
++  `covariates_<dataset>.txt`: A text file of variable names (same order as `X_<dataset>.csv`). Each covariate on its own line. Don't forget the intercept column!
+
+## Fitting models to data
+
+### MLR
+
+Run the `MCMC-final-<dataset>.nb` file in `Mathematica` after modifying the file path to your files. You also need to hard code in your variable names in the four lines that follow the `SparseArray` function for loading your presence/absence data:
+
++  A vector of your species names in this format: `{"Species 1", "Species 2", ..., "Species N"}`
++  A vector of `1`s of length equal to the number of environmental variables (including the intercept!) in this format: `{1,1,1,1}`
++  A vector of variable names (but `intercept` must be called `constant`) in this format: `{"constant", "Var1", ..., "VarK"}`
++  A vector of variable names (but `intercept` must be called `constant`) in this format: `{{"constant"}, {"Var1"}, ..., {"VarK"}}`
+
+### MPR
+
+Run the `analysis_script.R` script in `R` after modifying the file paths for your data files. Run the `Beta-R-extraction-script.R` following the first's completion after modifying your file paths.
+
+### HPR
+
+Run the `Pollock_<dataset>.R` script in `R` after modifying the file paths for your data files. Run the `data_extraction.R` following the first's completion after modifying your file paths.
+
+### LPR
+
+Run the `boralJSDM.R` script in `R` after modifying the file paths for your data files. Run the `boral_data_extraction.R` following the first's completion after modifying your file paths.
+
+### DPR
+
+Run the `ClarkJSDM.R` script in `R` after modifying the file paths for your data files. Run the `data_extraction_Clark.R` following the first's completion after modifying your file paths.
+
+### HLR_NS
+
+Run the `model_definitions.m` file in `MATLAB` after setting `basefolder` to the project directory file path, setting `datafolder` to the `data` folder inside `basefolder` and `example` to the name of your dataset. Run `A2_HMSC.m`, `A3_show_estimates.m`, `A4_generate_predictions.m` (after setting `example` to your dataset name), and `A5_<dataset>.m` in order. 
+
+Then run `Ovaskainen 2016 NS Data Extraction.R` in `R` to extract the outputs in the required formats.
+
+### HLR_S
+
+Run the `model_definitions.m` file in `MATLAB` after setting `basefolder` to the project directory file path, setting `datafolder` to the `data` folder inside `basefolder` and `example` to the name of your dataset. Run `A2_HMSC.m`, `A3_show_estimates.m`, `A4_generate_predictions.m` (after setting `example` to your dataset name), and `A5_<dataset>.m` in order. 
+
+Then run `Ovaskainen 2016 Data Extraction.R` in `R` to extract the outputs in the required formats.
+
+## Sampler efficiency
+
+The sampler efficiency comparison replicates the above model fitting on the frog dataset but with the same MCMC regime across all models. Use the scripts in this folder instead of the separate ones in the main analysis folders.
+
+## Plotting
+
+Take all of the `.csv` files generated from each model's respective data extraction scripts and copy them into the plotting directory. There should be a copy in the folder for each dataset *and* and copy in the `All Species` folder. Then run the relevant plotting scripts after changing the respective file paths.
