@@ -11,7 +11,7 @@
 
 <meta name="author" content="David Wilkinson" />
 
-<meta name="date" content="2018-06-19" />
+<meta name="date" content="2018-07-25" />
 
 <title>Code Repository Vignette</title>
 
@@ -229,11 +229,12 @@ div.tocify {
 
 <h1 class="title toc-ignore">Code Repository Vignette</h1>
 <h4 class="author"><em>David Wilkinson</em></h4>
-<h4 class="date"><em>2018-06-19</em></h4>
+<h4 class="date"><em>2018-07-25</em></h4>
 
 </div>
 
 
+<p>This repository stores the code to replicate the analysis from Wilkinson et al (in review) using your own data.</p>
 <div id="formatting-your-data" class="section level2">
 <h2>Formatting your data</h2>
 <p>As we do not own the data used in our analysis we have not provided it online as part of the repository. Here we provide instructions for how to replicate our analysis methodology on your own data.</p>
@@ -242,39 +243,39 @@ div.tocify {
 <h3>MLR</h3>
 <p>Data must be supplied as follows:</p>
 <ul>
-<li>Separate <code>.txt</code> files for species and environmental data where rows correspond to sites. <strong>Do not include column names</strong>. Include an intercept column at the front of the environmental data.</li>
+<li>Separate <code>.txt</code> files for species and environmental data where rows correspond to sites and columns to species and variables respectively. <strong>Do not include column names</strong>. Include an intercept column (all <code>1</code>s) at the front of the environmental data.</li>
 </ul>
 </div>
 <div id="mpr" class="section level3">
 <h3>MPR</h3>
 <p>Data can be supplied as either of the following with some minor code alterations:</p>
 <ul>
-<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site</li>
-<li>As separate <code>.csv</code> files for species and environmental data</li>
+<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site.</li>
+<li>As separate <code>.csv</code> files for species and environmental data.</li>
 </ul>
 </div>
 <div id="hpr" class="section level3">
 <h3>HPR</h3>
 <p>Data can be supplied as either of the following with some minor code alterations:</p>
 <ul>
-<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site</li>
-<li>As separate <code>.csv</code> files for species and environmental data</li>
+<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site.</li>
+<li>As separate <code>.csv</code> files for species and environmental data.</li>
 </ul>
 </div>
 <div id="lpr" class="section level3">
 <h3>LPR</h3>
 <p>Data can be supplied as either of the following with some minor code alterations:</p>
 <ul>
-<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site</li>
-<li>As separate <code>.csv</code> files for species and environmental data</li>
+<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site.</li>
+<li>As separate <code>.csv</code> files for species and environmental data.</li>
 </ul>
 </div>
 <div id="dpr" class="section level3">
 <h3>DPR</h3>
 <p>Data can be supplied as either of the following with some minor code alterations:</p>
 <ul>
-<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site</li>
-<li>As separate <code>.csv</code> files for species and environmental data</li>
+<li>A single <code>.csv</code> file with species observations and environmental variables as columns, and a row for each site.</li>
+<li>As separate <code>.csv</code> files for species and environmental data.</li>
 </ul>
 </div>
 <div id="hlr-ns" class="section level3">
@@ -283,11 +284,9 @@ div.tocify {
 <ul>
 <li><code>y_&lt;dataset&gt;.csv</code>: Your presence-absence data <strong>with no column names</strong>. Sites as rows, species as columns.</li>
 <li><code>X_&lt;dataset&gt;.csv</code>: Your covariate data <strong>with no column names</strong>. Sites as rows, variables as columns. The first column must be all <code>1</code>s for the intercept, the remaining columns are your measured variables.</li>
-<li><code>LF_xy_&lt;dataset&gt;_1.csv</code>: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)</li>
-<li><code>LF_units_&lt;dataset&gt;.csv</code>: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of <code>1</code> to the number of sites by <code>1</code> (e.g. <code>1</code>, <code>2</code>, …, <code>100</code> for <code>100</code> sites)</li>
-<li><code>LF_alpha_&lt;dataset&gt;_1.csv</code>: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from <code>0</code> to <code>1</code> by <code>0.01</code>, and the second column is all <code>0.005</code> except for the first row which is <code>0.5</code>.</li>
+<li><code>LF_units_&lt;dataset&gt;.csv</code>: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of <code>1</code> to the number of sites by <code>1</code> (e.g. <code>1</code>, <code>2</code>, …, <code>100</code> for <code>100</code> sites).</li>
 <li><code>dist_&lt;dataset&gt;.csv</code>: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be <code>2</code> for the probit model.</li>
-<li><code>species_&lt;dataset&gt;.txt</code>: A text file of species names (same order as <code>y_&lt;dataset&gt;.csv</code>). Each species on its own line</li>
+<li><code>species_&lt;dataset&gt;.txt</code>: A text file of species names (same order as <code>y_&lt;dataset&gt;.csv</code>). Each species on its own line.</li>
 <li><code>covariates_&lt;dataset&gt;.txt</code>: A text file of variable names (same order as <code>X_&lt;dataset&gt;.csv</code>). Each covariate on its own line. Don’t forget the intercept column!</li>
 </ul>
 </div>
@@ -297,11 +296,11 @@ div.tocify {
 <ul>
 <li><code>y_&lt;dataset&gt;.csv</code>: Your presence-absence data <strong>with no column names</strong>. Sites as rows, species as columns.</li>
 <li><code>X_&lt;dataset&gt;.csv</code>: Your covariate data <strong>with no column names</strong>. Sites as rows, variables as columns. The first column must be all <code>1</code>s for the intercept, the remaining columns are your measured variables.</li>
-<li><code>LF_xy_&lt;dataset&gt;_1.csv</code>: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)</li>
-<li><code>LF_units_&lt;dataset&gt;.csv</code>: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of <code>1</code> to the number of sites by <code>1</code> (e.g. <code>1</code>, <code>2</code>, …, <code>100</code> for <code>100</code> sites)</li>
-<li><code>LF_alpha_&lt;dataset&gt;_1.csv</code>: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from <code>0</code> to <code>1</code> by <code>0.01</code>, and the second column is all <code>0.005</code> except for the first row which is <code>0.5</code>.</li>
+<li><code>LF_xy_&lt;dataset&gt;_1.csv</code>: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. This analysis was run with two columns: latitude and longitude (no column names!), but you are not restricted to this coordinate system.</li>
+<li><code>LF_units_&lt;dataset&gt;.csv</code>: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of <code>1</code> to the number of sites by <code>1</code> (e.g. <code>1</code>, <code>2</code>, …, <code>100</code> for <code>100</code> sites).</li>
+<li><code>LF_alpha_&lt;dataset&gt;_1.csv</code>: The discrete grid prior for alpha (the parameter controlling decay in correlation with spatial distance). The first column gives the values, the second their weights. The default setting is the first column goes from <code>0</code> to <code>1</code> by <code>0.01</code>, and the second column is all <code>0.005</code> except for the first row which is <code>0.5</code>.</li>
 <li><code>dist_&lt;dataset&gt;.csv</code>: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be <code>2</code> for the probit model.</li>
-<li><code>species_&lt;dataset&gt;.txt</code>: A text file of species names (same order as <code>y_&lt;dataset&gt;.csv</code>). Each species on its own line</li>
+<li><code>species_&lt;dataset&gt;.txt</code>: A text file of species names (same order as <code>y_&lt;dataset&gt;.csv</code>). Each species on its own line.</li>
 <li><code>covariates_&lt;dataset&gt;.txt</code>: A text file of variable names (same order as <code>X_&lt;dataset&gt;.csv</code>). Each covariate on its own line. Don’t forget the intercept column!</li>
 </ul>
 </div>
@@ -312,10 +311,10 @@ div.tocify {
 <h3>MLR</h3>
 <p>Run the <code>MCMC-final-&lt;dataset&gt;.nb</code> file in <code>Mathematica</code> after modifying the file path to your files. You also need to hard code in your variable names in the four lines that follow the <code>SparseArray</code> function for loading your presence/absence data:</p>
 <ul>
-<li>A vector of your species names in this format: <code>{&quot;Species 1&quot;, &quot;Species 2&quot;, ..., &quot;Species N&quot;}</code></li>
-<li>A vector of <code>1</code>s of length equal to the number of environmental variables (including the intercept!) in this format: <code>{1,1,1,1}</code></li>
-<li>A vector of variable names (but <code>intercept</code> must be called <code>constant</code>) in this format: <code>{&quot;constant&quot;, &quot;Var1&quot;, ..., &quot;VarK&quot;}</code></li>
-<li>A vector of variable names (but <code>intercept</code> must be called <code>constant</code>) in this format: <code>{{&quot;constant&quot;}, {&quot;Var1&quot;}, ..., {&quot;VarK&quot;}}</code></li>
+<li>A vector of your species names in this format: <code>{&quot;Species 1&quot;, &quot;Species 2&quot;, ..., &quot;Species N&quot;}</code>.</li>
+<li>A vector of <code>1</code>s of length equal to the number of environmental variables (including the intercept!) in this format: <code>{1,1,1,1}</code>.</li>
+<li>A vector of variable names (but <code>intercept</code> must be called <code>constant</code>) in this format: <code>{&quot;constant&quot;, &quot;Var1&quot;, ..., &quot;VarK&quot;}</code>.</li>
+<li>A vector of variable names (but <code>intercept</code> must be called <code>constant</code>) in this format: <code>{{&quot;constant&quot;}, {&quot;Var1&quot;}, ..., {&quot;VarK&quot;}}</code>.</li>
 </ul>
 </div>
 <div id="mpr-1" class="section level3">
@@ -351,7 +350,7 @@ div.tocify {
 </div>
 <div id="plotting" class="section level2">
 <h2>Plotting</h2>
-<p>Take all of the <code>.csv</code> files generated from each model’s respective data extraction scripts and copy them into the plotting directory. There should be a copy in the folder for each dataset <em>and</em> and copy in the <code>All Species</code> folder. Then run the relevant plotting scripts after changing the respective file paths.</p>
+<p>Take all of the <code>.csv</code> files generated from each model’s respective data extraction scripts and copy them into the plotting directory. There should be a copy in the folder for each dataset <em>and</em> copy in the <code>All Species</code> folder. Then run the relevant plotting scripts after changing the respective file paths.</p>
 </div>
 
 

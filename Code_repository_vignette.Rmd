@@ -11,6 +11,8 @@ output:
       toc_depth: 4
 ---
 
+This repository stores the code to replicate the analysis from Wilkinson et al (in review) using your own data.
+
 ## Formatting your data
 
 As we do not own the data used in our analysis we have not provided it online as part of the repository. Here we provide instructions for how to replicate our analysis methodology on your own data.
@@ -21,35 +23,35 @@ You will require presence/absence data for your species and measured environment
 
 Data must be supplied as follows:
 
-+  Separate `.txt` files for species and environmental data where rows correspond to sites. **Do not include column names**. Include an intercept column at the front of the environmental data.
++  Separate `.txt` files for species and environmental data where rows correspond to sites and columns to species and variables respectively. **Do not include column names**. Include an intercept column (all `1`s) at the front of the environmental data.
 
 ### MPR
 
 Data can be supplied as either of the following with some minor code alterations:
 
-+  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
-+  As separate `.csv` files for species and environmental data
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site.
++  As separate `.csv` files for species and environmental data.
 
 ### HPR
 
 Data can be supplied as either of the following with some minor code alterations:
 
-+  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
-+  As separate `.csv` files for species and environmental data
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site.
++  As separate `.csv` files for species and environmental data.
 
 ### LPR
 
 Data can be supplied as either of the following with some minor code alterations:
 
-+  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
-+  As separate `.csv` files for species and environmental data
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site.
++  As separate `.csv` files for species and environmental data.
 
 ### DPR
 
 Data can be supplied as either of the following with some minor code alterations:
 
-+  A single `.csv` file with species observations and environmental variables as columns, and a row for each site
-+  As separate `.csv` files for species and environmental data
++  A single `.csv` file with species observations and environmental variables as columns, and a row for each site.
++  As separate `.csv` files for species and environmental data.
 
 ### HLR-NS
 
@@ -57,11 +59,9 @@ Data must be supplied in a very specific format for this model. For more detaile
 
 +  `y_<dataset>.csv`: Your presence-absence data **with no column names**. Sites as rows, species as columns.
 +  `X_<dataset>.csv`: Your covariate data **with no column names**. Sites as rows, variables as columns. The first column must be all `1`s for the intercept, the remaining columns are your measured variables.
-+  `LF_xy_<dataset>_1.csv`: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)
-+  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites)
-+  `LF_alpha_<dataset>_1.csv`: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from `0` to `1` by `0.01`, and the second column is all `0.005` except for the first row which is `0.5`.
++  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites).
 +  `dist_<dataset>.csv`: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be `2` for the probit model.
-+  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line
++  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line.
 +  `covariates_<dataset>.txt`: A text file of variable names (same order as `X_<dataset>.csv`). Each covariate on its own line. Don't forget the intercept column!
 
 ### HLR-S
@@ -70,11 +70,11 @@ Data must be supplied in a very specific format for this model. For more detaile
 
 +  `y_<dataset>.csv`: Your presence-absence data **with no column names**. Sites as rows, species as columns.
 +  `X_<dataset>.csv`: Your covariate data **with no column names**. Sites as rows, variables as columns. The first column must be all `1`s for the intercept, the remaining columns are your measured variables.
-+  `LF_xy_<dataset>_1.csv`: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. The replicate this analysis you need two columns: latitude and longitude (no column names!)
-+  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites)
-+  `LF_alpha_<dataset>_1.csv`: The discrete grid prior for alpha. The first column gives the values, the second their weights. The default setting is the first column goes from `0` to `1` by `0.01`, and the second column is all `0.005` except for the first row which is `0.5`.
++  `LF_xy_<dataset>_1.csv`: The spatial (or temporal) coordinates of the units. The number of columns corresponds to the spatial dimension and can be arbitrary. This analysis was run with two columns: latitude and longitude (no column names!), but you are not restricted to this coordinate system.
++  `LF_units_<dataset>.csv`: The model allows for latent factors to operate at different scales (e.g. plot, county, state, etc). To set all latent factors to work at the same level (as in this analysis) you must provide a single column of `1` to the number of sites by `1` (e.g. `1`, `2`, ..., `100` for `100` sites).
++  `LF_alpha_<dataset>_1.csv`: The discrete grid prior for alpha (the parameter controlling decay in correlation with spatial distance). The first column gives the values, the second their weights. The default setting is the first column goes from `0` to `1` by `0.01`, and the second column is all `0.005` except for the first row which is `0.5`.
 +  `dist_<dataset>.csv`: A single column of length equal to the number of species. This represents the statistical distribution assumed for the data. It should all be `2` for the probit model.
-+  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line
++  `species_<dataset>.txt`: A text file of species names (same order as `y_<dataset>.csv`). Each species on its own line.
 +  `covariates_<dataset>.txt`: A text file of variable names (same order as `X_<dataset>.csv`). Each covariate on its own line. Don't forget the intercept column!
 
 ## Fitting models to data
@@ -83,10 +83,10 @@ Data must be supplied in a very specific format for this model. For more detaile
 
 Run the `MCMC-final-<dataset>.nb` file in `Mathematica` after modifying the file path to your files. You also need to hard code in your variable names in the four lines that follow the `SparseArray` function for loading your presence/absence data:
 
-+  A vector of your species names in this format: `{"Species 1", "Species 2", ..., "Species N"}`
-+  A vector of `1`s of length equal to the number of environmental variables (including the intercept!) in this format: `{1,1,1,1}`
-+  A vector of variable names (but `intercept` must be called `constant`) in this format: `{"constant", "Var1", ..., "VarK"}`
-+  A vector of variable names (but `intercept` must be called `constant`) in this format: `{{"constant"}, {"Var1"}, ..., {"VarK"}}`
++  A vector of your species names in this format: `{"Species 1", "Species 2", ..., "Species N"}`.
++  A vector of `1`s of length equal to the number of environmental variables (including the intercept!) in this format: `{1,1,1,1}`.
++  A vector of variable names (but `intercept` must be called `constant`) in this format: `{"constant", "Var1", ..., "VarK"}`.
++  A vector of variable names (but `intercept` must be called `constant`) in this format: `{{"constant"}, {"Var1"}, ..., {"VarK"}}`.
 
 ### MPR
 
@@ -122,4 +122,4 @@ The sampler efficiency comparison replicates the above model fitting on the frog
 
 ## Plotting
 
-Take all of the `.csv` files generated from each model's respective data extraction scripts and copy them into the plotting directory. There should be a copy in the folder for each dataset *and* and copy in the `All Species` folder. Then run the relevant plotting scripts after changing the respective file paths.
+Take all of the `.csv` files generated from each model's respective data extraction scripts and copy them into the plotting directory. There should be a copy in the folder for each dataset *and* copy in the `All Species` folder. Then run the relevant plotting scripts after changing the respective file paths.
