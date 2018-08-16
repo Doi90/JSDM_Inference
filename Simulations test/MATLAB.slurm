@@ -27,13 +27,15 @@ model=$4
 
 module purge
 
-cd Ovaskainen\ 2016\ -\ Frog/source\ code/
-
-module load MATLAB/2016a
-module load R/3.4.1-intel-2016.u3
-
 for sim in {1..10}
 do
+  cd ~/../../data/cephfs/punim0200/MATLAB/source\ code/
+  module load MATLAB/2016a
   matlab -nodesktop -nodisplay -nosplash -r "beta=$beta; corr=$corr; cov=$cov; model=$model; sim=$sim" < A0_master_script.m
+  
+  cd ~/../../data/cephfs/punim0200/
+  module load R/3.4.1-intel-2016.u3
   Rscript --vanilla HLR_data_extraction.R $beta $corr $cov $model $sim
+  
+  module purge
 done

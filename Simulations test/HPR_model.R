@@ -134,7 +134,7 @@ for(c in seq_len(n.chains)){                            # For each chain
 
 ### Save Posteriors ----
 
-filename <- sprintf("%1$s.%2$s.%3$s/Sim%5$s/beta_posterior.%1$s.%2$s.%3$s.%4$s.rds",
+filename <- sprintf("outputs/%1$s.%2$s.%3$s/Sim%5$s/beta_posterior.%1$s.%2$s.%3$s.%4$s.rds",
                     beta_id,
                     corr_id,
                     cov_id,
@@ -144,7 +144,7 @@ filename <- sprintf("%1$s.%2$s.%3$s/Sim%5$s/beta_posterior.%1$s.%2$s.%3$s.%4$s.r
 saveRDS(Beta_posterior,
         filename)
 
-filename <- sprintf("%1$s.%2$s.%3$s/Sim%5$s/rho_posterior.%1$s.%2$s.%3$s.%4$s.rds",
+filename <- sprintf("outputs/%1$s.%2$s.%3$s/Sim%5$s/rho_posterior.%1$s.%2$s.%3$s.%4$s.rds",
                     beta_id,
                     corr_id,
                     cov_id,
