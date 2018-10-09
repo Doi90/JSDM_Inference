@@ -123,7 +123,8 @@ essBeta <- ggplot(ESS_Beta_ggplot, aes(x = Model, y = ESS)) +
   scale_fill_manual(values = rev(col_palette)) +
   theme_bw() +
   theme(legend.position = "none",
-        axis.text.x = element_text(angle = 45, hjust = 1)) +
+        axis.text.x = element_text(angle = 45, hjust = 1), 
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Effective sample size") +
   scale_y_continuous(labels = function(x) format(x, scientific = TRUE))
@@ -194,7 +195,8 @@ essRho <- ggplot(ESS_Rho_ggplot, aes(x = Model, y = ESS)) +
                      labels = function(x) format(x, scientific = TRUE)) +
   theme_bw() +
   theme(legend.position = "none",
-        axis.text.x = element_text(angle = 45, hjust = 1)) +
+        axis.text.x = element_text(angle = 45, hjust = 1), 
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Effective sample size")
 
@@ -207,5 +209,5 @@ ggsave(filename = "ESS_Rho.pdf", width = 7, height = 7, units = "in")
 ## Both plots in one image
 
 plot_grid(essBeta, essRho, align = "h", labels = "auto")
-ggsave(filename = "essSideBySide.pdf", width = 8, height = 4, units = "in")
-
+ggsave(filename = "essSideBySide.pdf", width = 8, height = 4, units = "in", dpi = 600)
+  

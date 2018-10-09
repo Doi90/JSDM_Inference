@@ -831,10 +831,11 @@ ggplot(Eucalypts_df, aes(coefficient, abs(gini), fill = model)) +
   scale_fill_manual(breaks = model, values = colour,
                     name = "Model") +
   theme_bw() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text = element_text(colour = "black")) +
   labs(x = "Covariate",
        y = "Gini Coefficient")
-ggsave("Beta_gini_Eucalypts.pdf", units = "in", width = 7, height = 7)
+ggsave("Beta_gini_Eucalypts.pdf", units = "in", width = 7, height = 7, dpi = 600)
 
 ### Frogs ----
 

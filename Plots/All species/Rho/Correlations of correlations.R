@@ -2493,7 +2493,8 @@ small4RelStr <- ggplot(Strength_Rho_All_Adj[!is.na(Strength_Rho_All_Adj$strength
                     name = "Model") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position="none") +
+        legend.position="none",
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Relative correlation strength") +
   coord_cartesian(ylim = c(0,7.5)) +
@@ -2515,7 +2516,7 @@ ggplot(Strength_Rho_All[Strength_Rho_All$dataset %in% c("Birds", "Butterflies"),
                     name = "Model") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position="none") +
+        legend.position="none",) +
   labs(x = "Model",
        y = "Correlation strength") +
   coord_cartesian(ylim = c(0,1))
@@ -2529,7 +2530,8 @@ big2RelStr <- ggplot(Strength_Rho_All_Adj[Strength_Rho_All_Adj$model != "MPR" &
                     name = "Model") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position="none") +
+        legend.position="none",
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Relative correlation strength") +
   coord_cartesian(ylim = c(0,6.5)) +
@@ -2543,7 +2545,7 @@ ggsave("Strength_Rho_Adj_Large2_boxplot.pdf", units = "in", width = 7, height = 
 
 plot_grid(small4RelStr, big2RelStr, align = "h", labels = "auto")
 
-ggsave(filename = "relStrSideBySide.pdf", width = 8, height = 4, units = "in")
+ggsave(filename = "relStrSideBySide.pdf", width = 8, height = 4, units = "in", dpi = 600)
 ### ----
 
 
@@ -3666,7 +3668,8 @@ small4RelUnc <- ggplot(Uncertainty_Rho_All_Adj[Uncertainty_Rho_All_Adj$model != 
                     name = "Model") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position="none") +
+        legend.position="none",
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Relative uncertainty") +
   coord_cartesian(ylim = c(0,2.5)) +
@@ -3701,7 +3704,8 @@ big2RelUnc <- ggplot(Uncertainty_Rho_All_Adj[Uncertainty_Rho_All_Adj$model != "M
                     name = "Model") +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        legend.position="none") +
+        legend.position="none",
+        axis.text = element_text(colour = "black")) +
   labs(x = "Model",
        y = "Relative uncertainty") +
   coord_cartesian(ylim = c(0,2.5)) +
@@ -3712,5 +3716,5 @@ big2RelUnc
 ggsave("Uncertainty_Adj_Rho_Large2_boxplot.pdf", units = "in", width = 7, height = 7)
 
 plot_grid(small4RelUnc, big2RelUnc, align = "h", labels = "auto")
-ggsave(filename = "RelUncSideBySide.pdf", width = 8, height = 4, units = "in")
+ggsave(filename = "RelUncSideBySide.pdf", width = 8, height = 4, units = "in", dpi = 600)
 ### ----

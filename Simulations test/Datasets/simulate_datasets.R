@@ -237,7 +237,7 @@ for(sim in seq_len(10)){
   filename <- sprintf("Simulations test/Datasets/Sim%s/meas_unmeas_cov.csv",
                       sim)
   
-  write.csv(meas_unmeas_cov,
+  write.csv(meas_unmeas_cov[ , 1:5], # Don't write unmeasured variables to data file
             filename,
             row.names = FALSE)
   
@@ -497,7 +497,7 @@ for(sim in seq_len(10)){
             filename,
             row.names = FALSE)
   
-  ### Meas + unmeas. Hierarchical. Full correaltion ----
+  ### Meas + unmeas. Hierarchical. Full correlation ----
   
   pa_hi_fc_mu <- matrix(NA,
                         nrow = 100,

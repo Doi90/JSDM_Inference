@@ -108,14 +108,15 @@ for(i in unique(df$Species)){
                                   colour = Model)) + 
     geom_point(position=dodge) +
     geom_errorbar(aes(ymax=Upper,ymin=Lower),position = dodge) +
-    theme(legend.position = "right") +
+    theme_bw() +
+    theme(legend.position = "right",
+          axis.text = element_text(colour = "black")) +
     ylab("Posterior Mean") + 
     xlab("Variable") +
     coord_flip() +
     ggtitle(i) +
     scale_colour_manual(values = colour_inverse, breaks = rev(levels(df$Model))) +
-    scale_x_discrete(name = "", limits = rev(levels(df$Coefficient))) +
-    theme_bw()
+    scale_x_discrete(name = "", limits = rev(levels(df$Coefficient)))
   
-  ggsave(file.name, units = "in", width = 7, height = 7)
+  ggsave(file.name, units = "in", width = 7, height = 7, dpi = 600)
 }
