@@ -22,6 +22,8 @@
 **/*Complete.csv
 *.tif
 *.png
+*.pdf
+!Datasets/**
 BayesComm\ -\ Mosquito/*.pdf
 Boab\ Model\ Runs/
 boral\ -\ Mosquito\ -\ Copy/
@@ -110,3 +112,4 @@ Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_E*
 Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_F*
 Sampler\ Efficiency\ Comparison/Ovaskainen*/**/posteriors/beta_M*
 Sampler\ Efficiency\ Comparison/Ovaskainen*/**/predictions/
+vignette_for_reid.docx
